@@ -24,19 +24,36 @@ a,
 
 /* DESKTOP NAV */
 
+#desktop-nav, #hamburger-nav {
+    position: fixed;
+    z-index: 1000;   
+    width: 100%;
+    background-color: white;    
+}
+
 nav, .nav-links, .logo {
     display: flex;    
 }
 
 nav {
     justify-content: space-around; 
-    height: 100px;     
+    height: 17vh;  
+    align-items: center;   
 }   
 
 .logo{                 
     font-size: 32px;
     cursor: pointer;  
     align-items: center;
+}
+
+.logo a {    
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {    
+    text-decoration: none;
+    transform: scale(1.1);
 }
 
 .nav-links {    
@@ -46,20 +63,99 @@ nav {
     gap: 28px;
 }
 
-.nav-links a {    
+a {
     text-decoration: none; 
     text-decoration-color: white;  
     color: black;
+}
+
+.nav-links a {        
     font-size: 24px;    
     transition: all .3s ease;
 }
 
-.nav-links a:hover{
+a:hover {
     color: rgb(137, 137, 137);
     text-decoration: underline;
     text-underline-offset: 10px;    
     text-decoration-color: rgb(181, 181, 181);
 }  
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+   display: none;
+}
+
+.hamburger-menu {
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-menu-icon span {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    transition: all 0.3 ease-in-out;    
+}
+
+.hamburger-menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.hamburger-menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.hamburger-menu-links a:hover {
+    color: rgb(137, 137, 137);
+    text-decoration: underline;
+    text-underline-offset: 10px;    
+    text-decoration-color: rgb(181, 181, 181);
+}  
+
+.hamburger-menu-links li {
+    list-style: none;
+}
+
+.hamburger-menu-links.open {
+    max-height: 300px;
+}
+  
+.hamburger-menu-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 1px);
+}
+
+.hamburger-menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -1px);
+}
+  
 
 /* PROFILE */
 
@@ -71,7 +167,8 @@ nav {
     justify-content: center;
     gap: 100px;   
     height: 700px;   
-    align-items: center;      
+    align-items: center;   
+    padding-top: 17vh;   
 }
 
 .section-pic-container {    
@@ -91,7 +188,7 @@ nav {
 .section-text {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
     gap: 20px;    
 }
 
@@ -104,9 +201,21 @@ nav {
     text-align: center;
 }
 
-.section_text_p2 {
+.typing-text {
     font-size: 30px;
     text-align: center;
+    white-space: nowrap; 
+    width: fit-content;
+    height: 41px;
+    border-right: 2px solid;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 .socials-container {
@@ -165,9 +274,9 @@ nav {
 }
 
 #about {
-    height: 730px;
+    height: 700px;
     position: relative;
-    padding-top: 50px;  
+    padding-top: 80px;  
 }
 
 #about .section-pic-container {    
@@ -218,14 +327,15 @@ nav {
     position: absolute;
     right: 70px;
     bottom: 100px;
+    
 }
 
 /* EXPERTISE */
 
 #expertise {
     position: relative;
-    height: 730px;
-    padding-top: 40px;
+    height: 670px;
+    padding-top: 90px;
 }
 
 #expertise .detail-container {
@@ -235,7 +345,7 @@ nav {
 .expertise-sub-title {
     text-align: center;
     font-size: 28px;
-    color: grey;
+    color: grey;    
 }
 
 .article-container, .columnm article, article{
@@ -262,9 +372,16 @@ article {
 /* PROJECTS */
 
 #projects {
-    height: 800px;
+    height: 780px;
     position: relative;
-    padding-top: 50px;
+    padding-top: 90px;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
 }
 
 .details-container {
@@ -275,8 +392,16 @@ article {
     margin-top: 30px;
 }
 
-#projects .detail-container {    
-    justify-content: start;    
+#projects .detail-container {      
+    min-width: 30%; 
+    max-width: 100%;
+    display: none; 
+}
+
+
+#projects .detail-container.active {
+    display: flex;
+    justify-content: start;
     align-items: center;
     gap: 20px;
     border: 1px solid rgb(204, 204, 204);
@@ -316,6 +441,33 @@ article {
     border: 1px solid grey;    
 }
 
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: none; 
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; 
+}
+
+.carousel-control-prev {
+    left: 10px; 
+}
+
+.carousel-control-next {
+    right: 10px; 
+}
+
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(255, 255, 255, 1); 
+}
+
 /* CONTACT */
 
 .contact-container,.contact-info-upper-container, .contact-info-container {
@@ -330,7 +482,7 @@ article {
     flex-direction: column;
     justify-content: center;    
     align-items: center;
-    height: 620px;
+    height: 720px;
     gap: 20px;
 }
 
@@ -356,4 +508,11 @@ article {
     text-decoration: none;
     color: black;
     font-size: 18px;
+}
+
+#contact .arrow{     
+    position: absolute;
+    right: 70px;
+    bottom: 100px;
+    transform: rotate(180deg);
 }

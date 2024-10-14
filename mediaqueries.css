@@ -35,23 +35,20 @@
 
   #about, #expertise {        
       margin-bottom: 100px; 
-  }
-  #projects  {
-      margin-bottom: 500px; 
   }  
 }
 
 @media screen and (max-width: 800px) {  
-  #projects {
-    margin-bottom: 900px;
+  #desktop-nav {
+    display: none;
   }
+
+  #hamburger-nav {
+    display: flex;    
+  }  
 }
 
-@media screen and (max-width: 600px) {
-  .logo {    
-    display: none;    
-  }  
-  
+@media screen and (max-width: 600px) {   
   .nav-links {
     gap: 10px;
     height: 100%;
@@ -69,8 +66,9 @@
     font-size: 32px;
   }
 
-  .section_text_p2 {
-    font-size: 20px;    
+  .typing-text {
+    font-size: 20px;        
+    height: 30px;
   }
 
   .text-container {

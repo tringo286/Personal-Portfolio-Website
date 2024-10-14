@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Tri Ngo | Portfolio</title>
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">    
+    <script src="script.js" defer></script> 
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Tri Ngo</div>
+    <nav id="desktop-nav">  
+        <div class="logo"><a href="#profile">Tri Ngo</a></div>
         <ul class="nav-links">
             <li><a href="#about">About Me</a></li>                
             <li><a href="#expertise">Expertise</a></li>                
             <li><a href="#projects">Projects</a></li>                
             <li><a href="#contact">Contact</a></li>                
         </ul>       
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Tri Ngo</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-menu-icon" onclick="toggleMenu()">
+                <span></span>    
+                <span></span>    
+                <span></span>  
+            </div>
+            <div class="hamburger-menu-links">
+                <li><a href="#about">About</a></li>                
+                <li><a href="#expertise">Expertise</a></li>                
+                <li><a href="#projects">Projects</a></li>                
+                <li><a href="#contact">Contact</a></li> 
+            </div>
+        </div>
     </nav>    
     <section id="profile">
         <div class="section-pic-container">
@@ -29,7 +46,7 @@
         <div class = "section-text">
             <p>Hello, I'm</p>
             <h1 class="title">Tri Ngo</h1>
-            <p class="section_text_p2">Frontend Developer</p>
+            <p class="typing-text"></p>
             <div class="button-container">
                 <button class="btn btn-color-2" onclick="window.open('./assets/Tri_Ngo.pdf')">Dowload Resume</button>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
@@ -62,8 +79,7 @@
                     </p>
                 </div>                
             </div>            
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#expertise'">        
+        </div>              
     </section>    
     <section id="expertise">
         <p class="section_text_p1">Explore my</p>
@@ -131,79 +147,81 @@
                     </div>                                           
                 </div>
             </div>                       
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+        </div>        
     </section>
     <section id="projects">
         <p class="section_text_p1">Browse my</p>
         <h1 class="title">Projects</h1>
-        <div class="details-container">            
-            <div class="detail-container">
-                <div class="article-container">
-                    <img src="./assets/Decryptoid.png" alt="Project 1" class="project-img">
+        <div class="carousel-container">
+            <div class="details-container">            
+                <div class="detail-container">
+                    <div class="article-container">
+                        <img src="./assets/Decryptoid.png" alt="Project 1" class="project-img">
+                    </div>
+                    <h2 class="expertise-sub-title project-title">Decryptoid</h2>
+                    <p>
+                        Decryptoid is a web app for secure text encryption and decryption. Users can sign up, log in, and encrypt or decrypt text using ciphers like Simple Substitution, Double Transposition, and RC4. With secure session management and a MySQL database for storing user data, it ensures strong data protection throughout the process.
+                    </p>
+                    <div class="button-containter">
+                       <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Decryptoid', '_blank')">
+                        Github    
+                        </button> 
+                        <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Decryptoid', '_blank')">
+                        View    
+                        </button>   
+                        </button>
+                    </div>
                 </div>
-                <h2 class="expertise-sub-title project-title">Decryptoid</h2>
-                <p>
-                    Decryptoid is a web app for secure text encryption and decryption. Users can sign up, log in, and encrypt or decrypt text using ciphers like Simple Substitution, Double Transposition, and RC4. With secure session management and a MySQL database for storing user data, it ensures strong data protection throughout the process.
-                </p>
-                <div class="button-containter">
-                   <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Decryptoid', '_blank')">
-                    Github    
-                    </button> 
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Decryptoid', '_blank')">
-                    View    
-                    </button>   
-                    </button>
+                <div class="detail-container">
+                    <div class="article-container">
+                        <img src="./assets/Olympia.png" alt="Project 2" class="project-img">
+                    </div>
+                    <h2 class="expertise-sub-title project-title">Olympia</h2>
+                    <p>
+                        Olympia is a hotel booking app designed for seamless online room reservations. Built with React.js and Node.js, it offers user authentication, advanced search with filtering, reservation management, and integrated payment solutions. The app includes a user-friendly rewards program to enhance the booking experience.
+                    </p>
+                    <div class="button-containter">
+                        <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Olympia', '_blank')">
+                        Github    
+                        </button>
+                        <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Olympia', '_blank')">
+                        View    
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="detail-container">
-                <div class="article-container">
-                    <img src="./assets/Olympia.png" alt="Project 2" class="project-img">
-                </div>
-                <h2 class="expertise-sub-title project-title">Olympia</h2>
-                <p>
-                    Olympia is a hotel booking app designed for seamless online room reservations. Built with React.js and Node.js, it offers user authentication, advanced search with filtering, reservation management, and integrated payment solutions. The app includes a user-friendly rewards program to enhance the booking experience.
-                </p>
-                <div class="button-containter">
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Olympia', '_blank')">
-                    Github    
-                    </button>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Olympia', '_blank')">
-                    View    
-                    </button>
-                </div>
-            </div>
-            <div class="detail-container">
-                <div class="article-container">
-                    <img src="./assets/chathub.png" alt="Project 3" class="project-img">
-                </div>
-                <h2 class="expertise-sub-title project-title">Chathub</h2>
-                <p>
-                    ChatHub is a real-time chat application built using Node.js, Express, and Socket.io. It features multiple chat rooms, custom usernames, live messaging, and real-time join/leave notifications, creating a seamless and engaging communication experience for users.                        
-                </p>
-                <div class="button-containter">
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Chathub', '_blank')">
-                    Github    
-                    </button>
-                    <button 
-                    class="btn btn-color-2 project-btn"
-                    onclick="window.open('https://github.com/tringo286/Chathub', '_blank')">
-                    View    
-                    </button>
-                </div>
-            </div>               
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
+                <div class="detail-container">
+                    <div class="article-container">
+                        <img src="./assets/chathub.png" alt="Project 3" class="project-img">
+                    </div>
+                    <h2 class="expertise-sub-title project-title">Chathub</h2>
+                    <p>
+                        ChatHub is a real-time chat application built using Node.js, Express, and Socket.io. It features multiple chat rooms, custom usernames, live messaging, and real-time join/leave notifications, creating a seamless and engaging communication experience for users.                        
+                    </p>
+                    <div class="button-containter">
+                        <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Chathub', '_blank')">
+                        Github    
+                        </button>
+                        <button 
+                        class="btn btn-color-2 project-btn"
+                        onclick="window.open('https://github.com/tringo286/Chathub', '_blank')">
+                        View    
+                        </button>
+                    </div>
+                </div>               
+            </div>      
+            <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+        </div>        
     </section>    
     <section id="contact">        
         <div class="contact-container">
@@ -224,9 +242,9 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer>
+        </div>        
+    </section>    
+    <!-- <footer>
         <nav>
             <div class="nav-links-container">
               <ul class="nav-links">
@@ -237,7 +255,6 @@
               </ul>
             </div>
         </nav>
-    </footer>
-    <script src="script.js"></script>
+    </footer> -->   
 </body>
 </html>
