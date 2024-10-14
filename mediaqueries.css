@@ -1,3 +1,13 @@
+@media screen and (max-width: 1400px) {
+  .carousel-control-prev {
+    left: 15%; 
+  }
+
+  .carousel-control-next {
+    right: 15%; 
+  }
+}
+
 @media screen and (max-width: 1200px) {  
   #expertise, .expertise-details-container {
     margin-top: 2rem;
@@ -9,9 +19,7 @@
   #expertise .section-container{
       display: flex;
   }
-  .arrow {
-      display: none;
-  }
+  
   section, .section-container {
     height: fit-content;
   }    
@@ -25,17 +33,56 @@
       margin: 0 auto 2rem;    
   }
 
+  #projects {
+    height: 700px;   
+  }
+
+  #projects .detail-container.active {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;      
+    border: none;   
+    gap: 10px;
+   
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    height: 100%;
+    width: 350px;
+    gap: 10px;
+  }
+
+  #projects .article-container img {   
+    width: 300px;    
+    height: 300px;    
+  }
+
+  #projects .content-container p {        
+    line-height: 22px;
+    font-size: 13px;
+  }
+  
+
   #about .section-pic-container {       
     width: 180px;
     height: auto;
   } 
+
   .about-containers {
       margin-top: 0;
     }
 
-  #about, #expertise {        
+  #about {        
       margin-bottom: 100px; 
   }  
+
+  #expertise {        
+    margin-bottom: 200px; 
+  }
 }
 
 @media screen and (max-width: 800px) {  
@@ -45,7 +92,7 @@
 
   #hamburger-nav {
     display: flex;    
-  }  
+  }    
 }
 
 @media screen and (max-width: 600px) {   
@@ -104,14 +151,41 @@
 
   #expertise .article-container {    
     justify-content: center;
+  }  
+
+  #projects .article-container img {   
+    width: 250px;    
+    height: 250px;    
   }
 
+  .content-container {
+    align-items: center;
+  }
 
-  #projects  {
-    margin-bottom: 1000px; 
-  } 
+  #projects .content-container p {
+    font-size: 12px;
+    width: 300px;     
+  }  
 
-  .contact-info-upper-container {
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 60%; 
+    font-size: 30px;       
+  }
+
+  .carousel-control-prev {
+    left: 1%; 
+  }
+
+  .carousel-control-next {
+    right: 1%; 
+  }
+
+  .contact-container {   
+    height: 600px;
+  }
+
+  .contact-info-upper-container {    
     flex-direction: column;
     padding: 10px;
     justify-content: center;

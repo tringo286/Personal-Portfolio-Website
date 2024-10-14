@@ -1,4 +1,4 @@
-// Hamburgur menu
+// Hamburger menu
 function toggleMenu() {
     const menu = document.querySelector('.hamburger-menu-links');
     const icon = document.querySelector('.hamburger-menu-icon');
@@ -6,6 +6,12 @@ function toggleMenu() {
     icon.classList.toggle('open');
 }
 
+function darkModetoggle() {
+    const element = document.body;
+
+
+    
+}
 
 // Carousel to display projects 
 let currentSlide = 0;
