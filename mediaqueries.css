@@ -9,6 +9,14 @@
 }
 
 @media screen and (max-width: 1200px) {  
+  #profile {       
+    padding-top: 20vh;   
+  } 
+
+  #about, #expertise, #projects {       
+    padding-top: 20vh;   
+  }
+
   #expertise, .expertise-details-container {
     margin-top: 2rem;
   }
@@ -95,7 +103,8 @@
   }    
 }
 
-@media screen and (max-width: 600px) {   
+@media screen and (max-width: 600px) {  
+  
   .nav-links {
     gap: 10px;
     height: 100%;

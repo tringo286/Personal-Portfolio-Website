@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;   
 }
 
 html {
@@ -27,8 +27,8 @@ a,
 #desktop-nav, #hamburger-nav {
     position: fixed;
     z-index: 1000;   
-    width: 100%;
-    background-color: white;    
+    width: 100%;      
+    background-color: white;
 }
 
 nav, .nav-links, .logo {
@@ -80,6 +80,15 @@ a:hover {
     text-underline-offset: 10px;    
     text-decoration-color: rgb(181, 181, 181);
 }  
+
+.theme-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.theme-icon:hover{
+    opacity: 0.7;
+}
 
 /* HAMBURGER MENU */
 
@@ -165,7 +174,7 @@ a:hover {
 #profile {
     justify-content: center;
     gap: 100px;   
-    height: 700px;   
+    height: 600px;   
     align-items: center;   
     padding-top: 17vh;   
 }
@@ -266,9 +275,6 @@ a:hover {
     cursor: pointer;
 }
 
-.dark-mode-button {
-
-}
 
 /* ABOUT */
 
@@ -482,6 +488,27 @@ article {
     opacity: 0.7;
 }
 
+.dot-navigation {
+    text-align: center;
+    margin-top: 10px; /* Space between carousel and dots */
+}
+
+.dot {
+    display: inline-block;
+    width: 12px; /* Width of the dot */
+    height: 12px; /* Height of the dot */
+    margin: 0 5px; /* Space between dots */
+    border-radius: 50%; /* Make it circular */
+    background-color: lightgray; /* Default color for inactive dots */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: gray; /* Active dot color */
+}
+
+
 /* CONTACT */
 
 .contact-container,.contact-info-upper-container, .contact-info-container {
@@ -524,9 +551,76 @@ article {
     font-size: 18px;
 }
 
-#contact .arrow{     
-    position: absolute;
-    right: 70px;
-    bottom: 100px;
-    transform: rotate(180deg);
+/* FOOTER */
+
+footer {
+    position: relative;
+}
+
+footer p {
+    position: absolute;    
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* DARK MODE */
+
+
+
+.dark-mode {
+    background-color: black;    
+}
+
+.dark-mode #desktop-nav, 
+.dark-mode #hamburger-nav,
+.dark-mode .hamburger-menu-links.open
+{
+    background-color: #444444;       
+} 
+
+.dark-mode .hamburger-menu-icon span {  
+    background-color: white;      
+}
+
+.dark-mode a, 
+.dark-mode p,
+.dark-mode h1, 
+.dark-mode h2,
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode .typing-text {
+    color: white;
+}
+
+.dark-mode .btn-color-1{
+    background-color: white;
+    color: black;     
+}
+
+.dark-mode .socials-container, 
+.dark-mode .education-icon,
+.dark-mode .next-js-icon,
+.dark-mode .js-icon,
+.dark-mode .contact-info-upper-container .icon,
+.dark-mode .theme-icon
+{
+    filter: invert(1); 
+}
+
+
+.dark-mode .carousel-control-prev,
+.dark-mode .carousel-control-next {
+    color: white;    
+}
+
+/* Default to moon icon */
+.theme-icon::before {
+    content: '\f186';    
+    font-weight: 900; 
+}
+
+/* When dark mode is active, change to sun icon */
+.dark-mode .theme-icon::before {
+    content: '\f185'; 
 }

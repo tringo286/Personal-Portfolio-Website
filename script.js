@@ -6,11 +6,9 @@ function toggleMenu() {
     icon.classList.toggle('open');
 }
 
-function darkModetoggle() {
-    const element = document.body;
-
-
-    
+// Dark modoe
+function darkModetoggle() {    
+    document.body.classList.toggle('dark-mode');   
 }
 
 // Carousel to display projects 
@@ -37,7 +35,7 @@ function prevSlide() {
 
 showSlide(currentSlide);
 
-//Typing effect
+// Tpying text 
 const typingText = document.querySelector('.typing-text');
 const textArray = ["Frontend Developer", "Software Engineer"];
 let arrayIndex = 0;
