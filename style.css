@@ -488,26 +488,24 @@ article {
     opacity: 0.7;
 }
 
-.dot-navigation {
+.bullet-nav {
     text-align: center;
-    margin-top: 10px; /* Space between carousel and dots */
+    margin-top: 10px;
 }
 
-.dot {
+.bullet {
     display: inline-block;
-    width: 12px; /* Width of the dot */
-    height: 12px; /* Height of the dot */
-    margin: 0 5px; /* Space between dots */
-    border-radius: 50%; /* Make it circular */
-    background-color: lightgray; /* Default color for inactive dots */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
 }
 
-.dot.active {
-    background-color: gray; /* Active dot color */
+.bullet.active {
+    background-color: #333;
 }
-
 
 /* CONTACT */
 
@@ -566,8 +564,6 @@ footer p {
 
 /* DARK MODE */
 
-
-
 .dark-mode {
     background-color: black;    
 }
@@ -608,7 +604,6 @@ footer p {
     filter: invert(1); 
 }
 
-
 .dark-mode .carousel-control-prev,
 .dark-mode .carousel-control-next {
     color: white;    
@@ -624,3 +619,12 @@ footer p {
 .dark-mode .theme-icon::before {
     content: '\f185'; 
 }
+
+.dark-mode .bullet {   
+    background-color: #6f6f6f;    
+}
+
+.dark-mode .bullet.active {
+    background-color: white;
+}
+  

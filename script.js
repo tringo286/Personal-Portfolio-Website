@@ -11,13 +11,37 @@ function darkModetoggle() {
     document.body.classList.toggle('dark-mode');   
 }
 
-// Carousel to display projects 
+// Carousel with bullet navigation
 let currentSlide = 0;
+
+function createBullets() {
+    const slides = document.querySelectorAll('#projects .detail-container');
+    const bulletNav = document.querySelector('.bullet-nav');
+    bulletNav.innerHTML = ''; // Clear existing bullets
+
+    slides.forEach((slide, index) => {
+        const bullet = document.createElement('span');
+        bullet.classList.add('bullet');
+        if (index === currentSlide) {
+            bullet.classList.add('active');
+        }
+        bullet.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+        bulletNav.appendChild(bullet);
+    });
+}
 
 function showSlide(index) {
     const slides = document.querySelectorAll('#projects .detail-container'); 
     slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
+    });
+    
+    const bullets = document.querySelectorAll('.bullet');
+    bullets.forEach((bullet, i) => {
+        bullet.classList.toggle('active', i === index);
     });
 }
 
@@ -33,9 +57,10 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
+createBullets();
 showSlide(currentSlide);
 
-// Tpying text 
+// Typing text 
 const typingText = document.querySelector('.typing-text');
 const textArray = ["Frontend Developer", "Software Engineer"];
 let arrayIndex = 0;

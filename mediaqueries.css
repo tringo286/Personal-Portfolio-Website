@@ -42,7 +42,7 @@
   }
 
   #projects {
-    height: 700px;   
+    height: 750px;   
   }
 
   #projects .detail-container.active {
@@ -54,7 +54,6 @@
     gap: 10px;
    
   }
-
   .content-container {
     display: flex;
     flex-direction: column;
@@ -72,8 +71,11 @@
   #projects .content-container p {        
     line-height: 22px;
     font-size: 13px;
+  }  
+
+  .bullet-nav {    
+    margin-top: 30px;
   }
-  
 
   #about .section-pic-container {       
     width: 180px;
