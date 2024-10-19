@@ -6,13 +6,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <title>Tri Ngo | Portfolio</title>
     
+    <!-- Meta Description -->
+    <meta name="description" content="Welcome to Tri Ngo's portfolio! Explore my projects and skills in software engineering and development.">
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">    
-    <script src="script.js" defer></script> 
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav id="desktop-nav">  
@@ -27,24 +35,26 @@
     </nav>
     <nav id="hamburger-nav">
         <div class="logo"><a href="#profile">Tri Ngo</a></div>
-        <i class="far fa-user theme-icon" onclick="darkModetoggle()"></i>   
-        <div class="hamburger-menu">
-            <div class="hamburger-menu-icon" onclick="toggleMenu()">
-                <span></span>    
-                <span></span>    
-                <span></span>  
-            </div>
-            <div class="hamburger-menu-links">
-                <li><a href="#about">About</a></li>                
-                <li><a href="#expertise">Expertise</a></li>                
-                <li><a href="#projects">Projects</a></li>                
-                <li><a href="#contact">Contact</a></li> 
-            </div>
-        </div>        
+        <div class="icon-container">
+            <i class="far fa-user theme-icon icon" onclick="darkModetoggle()"></i>   
+            <div class="hamburger-menu">
+                <div class="hamburger-menu-icon" onclick="toggleMenu()">
+                    <span></span>    
+                    <span></span>    
+                    <span></span>  
+                </div>
+                <div class="hamburger-menu-links">
+                    <li><a href="#about">About</a></li>                
+                    <li><a href="#expertise">Expertise</a></li>                
+                    <li><a href="#projects">Projects</a></li>                
+                    <li><a href="#contact">Contact</a></li> 
+                </div>
+            </div> 
+        </div>       
     </nav>    
     <section id="profile">
         <div class="section-pic-container">
-            <img src="./assets/profile_pic.jpg" alt="Tri Ngo profile picture">
+            <img src="./assets/profile_pic.avif" alt="Tri Ngo profile picture">   
         </div>
         <div class = "section-text">
             <p>Hello, I'm</p>
@@ -71,9 +81,9 @@
                 <div class="detail-container">
                     <div class="education-container">
                         <img src="./assets/mortarboard.png" alt="Education icon" class="icon education-icon">
-                        <h3>Education</h3>
+                        <h2>Education</h2>
                     </div>
-                    <h4>San Jose State University</h4>
+                    <h3>San Jose State University</h3>
                     <p>Bachelor of Software Engineering</p>
                 </div>
                 <div class="text-container">
@@ -183,7 +193,7 @@
                 </div>
                 <div class="detail-container">
                     <div class="article-container">
-                        <img src="./assets/Olympia.png" alt="Project 2" class="project-img">
+                        <img src="./assets/Olympia.avif" alt="Project 2" class="project-img">
                     </div>
                     <div class="content-container">
                         <h2 class="expertise-sub-title project-title">Olympia</h2>
@@ -206,7 +216,7 @@
                 </div>
                 <div class="detail-container">
                     <div class="article-container">
-                        <img src="./assets/chathub.png" alt="Project 3" class="project-img">
+                        <img src="./assets/Chathub.avif" alt="Project 3" class="project-img">
                     </div>
                     <div class="content-container">
                         <h2 class="expertise-sub-title project-title">Chathub</h2>
@@ -229,7 +239,7 @@
                 </div>    
                 <div class="detail-container">
                     <div class="article-container">
-                        <img src="./assets/productStore.png" alt="Project 3" class="project-img">
+                        <img src="./assets/productStore.avif" alt="Project 3" class="project-img">
                     </div>
                     <div class="content-container">
                         <h2 class="expertise-sub-title project-title">Product Store</h2>

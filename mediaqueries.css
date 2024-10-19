@@ -9,6 +9,10 @@
 }
 
 @media screen and (max-width: 1200px) {  
+  #profile .section-pic-container img {
+    content: url('./assets/profile_pic_mobile.avif');
+  }
+
   #profile {       
     padding-top: 20vh;   
   } 
@@ -105,7 +109,7 @@
   }    
 }
 
-@media screen and (max-width: 600px) {  
+@media screen and (max-width: 600px) {   
   
   .nav-links {
     gap: 10px;

@@ -82,7 +82,7 @@ a:hover {
 }  
 
 .theme-icon {
-    font-size: 30px;
+    font-size: 32px;
     cursor: pointer;
 }
 
@@ -96,6 +96,15 @@ a:hover {
    display: none;
 }
 
+#hamburger-nav .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    width: auto;
+}
+
 .hamburger-menu {
     display: inline-block;
     position: relative;
@@ -105,8 +114,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 24px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
     cursor: pointer;
 }
 
@@ -154,7 +163,7 @@ a:hover {
 }
   
 .hamburger-menu-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px, 1px);
+    transform: rotate(45deg) translate(10px, 5px);
 }
 
 .hamburger-menu-icon.open span:nth-child(2) {
@@ -162,7 +171,7 @@ a:hover {
 }
 
 .hamburger-menu-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -1px);
+    transform: rotate(-45deg) translate(10px, -5px);
 }  
 
 /* PROFILE */
@@ -560,6 +569,7 @@ footer p {
     bottom: 15px;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-wrap: nowrap;
 }
 
 /* DARK MODE */
